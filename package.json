@@ -1,0 +1,37 @@
+{
+  "name": "wp-utils",
+  "version": "1.0.0",
+  "description": "wordpress external utility scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "posts": "nodemon cleanPostContent/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/epicallan/wp-utils.git"
+  },
+  "keywords": [
+    "wordpress",
+    "mysql",
+    "utilities"
+  ],
+  "author": "epicallan.al@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/epicallan/wp-utils/issues"
+  },
+  "homepage": "https://github.com/epicallan/wp-utils#readme",
+  "dependencies": {
+    "mysql-promise": "^4.1.0",
+    "mysql2": "^1.1.2",
+    "ramda": "^0.23.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.0.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.10.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2"
+  }
+}
