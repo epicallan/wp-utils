@@ -24,7 +24,7 @@ const getAffectedPostIds = (connection) =>
     'SELECT `ID` FROM `wp_posts` WHERE `post_status` = ?  && `post_type` = ?', ['publish', 'post']);
 
 // update affected posts with content from old DB
-const updatePost = R.curry((oldDB, newDB, ID) => {
+const updatePost = (oldDB, newDB, ID) => {
   // old content
   const getContent = () => oldDB.execute(
     'SELECT `post_content` FROM `wp_posts` WHERE `ID` = ?', [ID]);
@@ -37,13 +37,13 @@ const updatePost = R.curry((oldDB, newDB, ID) => {
   return R.composeP(
     debug(ID),
     parseResults, updateContent, R.prop('post_content'), R.head, parseResults, getContent)();
-});
+};
 
 const run = (postIDs) => {
   Promise.all([createConnection(config.oldDB), createConnection(config.newDB)])
   .then(([oldDB, newDB]) => {
-    postIDs.forEach((post, index) => {
-      if (index < 3) updatePost(oldDB, newDB, post.ID);
+    postIDs.forEach((post) => {
+      updatePost(oldDB, newDB, post.ID);
     });
   });
 };
