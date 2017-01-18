@@ -33,6 +33,7 @@ const updatePost = R.curry((oldDB, newDB, ID) => {
     newDB.execute('UPDATE `wp_posts` SET `post_content`= ? WHERE `ID` = ?', [content, ID]);
 
   const debug = R.curry((id, info) => console.log('ID', id, info, '*************'));
+
   return R.composeP(
     debug(ID),
     parseResults, updateContent, R.prop('post_content'), R.head, parseResults, getContent)();
