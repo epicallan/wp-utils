@@ -1,5 +1,5 @@
 // if you have node installed
-// run node index.js
+// run node index.js from root
 const fs = require('fs');
 const path = require('path')
 const RED = 'R';
