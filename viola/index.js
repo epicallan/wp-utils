@@ -1,3 +1,5 @@
+// if you have node installed
+// run node index.js
 const fs = require('fs');
 const path = require('path')
 const RED = 'R';
