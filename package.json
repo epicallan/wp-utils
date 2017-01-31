@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test",
+    "viola": "nodemon viola/index.js",
     "posts:dev": "nodemon updatePostContent/index.js",
     "posts": "node updatePostContent/index.js"
   },
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/epicallan/wp-utils#readme",
   "dependencies": {
+    "folktale": "^2.0.0-alpha2",
     "mysql-promise": "^4.1.0",
     "mysql2": "^1.1.2",
     "ramda": "^0.23.0"
